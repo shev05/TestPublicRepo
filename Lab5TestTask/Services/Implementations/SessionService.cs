@@ -22,12 +22,13 @@ public class SessionService : ISessionService
     public async Task<Session> GetSessionAsync()
     {
         var session = await _dbContext.Sessions.FirstOrDefaultAsync();
+	
         if (session == null)
         {
             throw new NotImplementedException();
         }
+	
         return session;
-
 	}
 
 	public async Task<List<Session>> GetSessionsAsync()
