@@ -20,8 +20,6 @@ public class UserService : IUserService
     }
     public async Task<User> GetUserAsync()
     {
-		
-
 		var user = await _dbContext.Users.OrderBy(u => u.Sessions.Count).FirstOrDefaultAsync();
 
 		if(user == null)
@@ -41,6 +39,7 @@ public class UserService : IUserService
 		{
 			throw new NotImplementedException();
 		}
+  
         return users;
 	}
 }
